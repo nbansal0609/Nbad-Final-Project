@@ -41,7 +41,6 @@ yarn-error.log
 testem.log
 /typings
 applitools.config.js
-cypress.env.json
 
 # System Files
 .DS_Store
