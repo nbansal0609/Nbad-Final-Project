@@ -58,6 +58,8 @@ Sorry, we could not load: http://localhost:4200/home
 1. **Restart both the backend server (node server.js) and the frontend server (ng serve).**
 2. **Try running the above commands again. This should resolve the issue.**
 
+<img src="./screenshots/Testing/login_page_test.png" alt="Example Image" width="300">
+
 # Screenshots:
 
 ### HomePage
