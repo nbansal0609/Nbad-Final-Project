@@ -130,3 +130,16 @@ Full screenshots can be found at:
 
 ## Contact Page
 ![Contact](./screenshots/ContactPage.png)
+
+# Database Structure 
+
+## ChartData Table
+![chartData](./screenshots/DatabaseStructures/chartData.png)
+
+## Expenses Table
+![expenses](./screenshots/DatabaseStructures/expenses.png)
+
+## Users Table
+![users](./screenshots/DatabaseStructures/users.png)
+
+
