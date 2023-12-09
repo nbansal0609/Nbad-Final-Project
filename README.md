@@ -1,3 +1,10 @@
+# **[Live Demo](http://64.176.218.2:4200)** 
+- ### **Link** - http://64.176.218.2:4200
+
+- Test Crendials with some dummy data with expenses for different months: 
+    - Username: n@b.com 
+    - Password: test123
+
 # Instructions to Run Project
 
 **Note: Please use Node version 20.8.1. If an error occurs, delete `node_modules` and follow the steps again.**
@@ -62,7 +69,7 @@ Sorry, we could not load: http://localhost:4200/home
 1. **Restart both the backend server (node server.js) and the frontend server (ng serve).**
 2. **Try running the above commands again. This should resolve the issue.**
 
-If you encounter errors related to cypress installation please run this command:
+If you encounter errors related to cypress installation please run this commands:
 
 ```bash
 npm install cypress@13.6.1 -f
