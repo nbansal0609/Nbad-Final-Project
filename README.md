@@ -28,7 +28,9 @@
 cd personal-budget
 ng test
 ```
+### Unit Test Results
 ![UnitTest](./screenshots/Testing/unit_test_main.png)
+
 ## E2E:
 The test cases location can be found at: 
 
@@ -58,7 +60,15 @@ Sorry, we could not load: http://localhost:4200/home
 1. **Restart both the backend server (node server.js) and the frontend server (ng serve).**
 2. **Try running the above commands again. This should resolve the issue.**
 
-<img src="./screenshots/Testing/login_page_test.png" alt="Example Image" width="300">
+### E2E Results 
+Full screenshots can be found at: 
+
+ `Nbad-Final-Project/screenshots/Testing`.
+
+![LoginPageTest](./screenshots/Testing/TestResult/crop_login_page_test.png)
+![VisualRegressionLoginCorrect](./screenshots/Testing/TestResult/crop_visual_regression_login_correct_test.png)
+![VisualRegressionLoginIncorrect](./screenshots/Testing/TestResult/crop_visual_regression_login_incorrect_test.png)
+![VisualRegressionVistPB](./screenshots/Testing/TestResult/crop_visual_regression_visit_pb_test.png)
 
 # Screenshots:
 
