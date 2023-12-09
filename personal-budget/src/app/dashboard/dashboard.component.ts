@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Chart } from 'chart.js';
 import { DataService } from '../services/data.service';
@@ -6,6 +6,9 @@ import { ErrorService } from '../services/error.service';
 import { Budget } from '../services/budget';
 import { AuthService } from '../services/auth.service';
 import { Expense } from '../services/expense';
+import { ChangeDetectorRef } from '@angular/core';
+
+
 
 
 
@@ -24,6 +27,9 @@ export class DashboardComponent implements AfterViewInit {
   colors = [];
   newExpense = [];
   newExpenseTitle = [];
+  // Add this property to store the time until the next month
+  timeUntilNextMonth: string = '';
+
 
   selectedBudget: Budget | null = null;
   selectedBudgetExpenses: Expense[] = [];
@@ -33,7 +39,13 @@ export class DashboardComponent implements AfterViewInit {
     private route: ActivatedRoute,
     private router: Router,
     public errorService: ErrorService,
+    private cdr: ChangeDetectorRef,
     public authService: AuthService) { }
+
+  ngOnInit(): void {
+    // Call resetExpenses() at the start of every month
+    this.scheduleMonthlyReset();
+  }
 
   ngAfterViewInit(): void {
     this.dataService.getAllBudgetData().subscribe({
@@ -208,6 +220,36 @@ export class DashboardComponent implements AfterViewInit {
     this.createMixedChart();
   }
 
+  scheduleMonthlyReset(): void {
+    const now = new Date();
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+    let timeUntilNextMonth = nextMonth.getTime() - now.getTime();
+
+    // Set the timeUntilNextMonth property to the formatted string
+    this.timeUntilNextMonth = this.formatTimeDuration(timeUntilNextMonth);
+
+    // Set an interval to call resetExpenses() at the beginning of every month
+    setInterval(() => {
+
+      // Update the time until the next month
+      timeUntilNextMonth -= 1000; // Subtract one second
+      this.timeUntilNextMonth = this.formatTimeDuration(timeUntilNextMonth);
+    }, 1000); // Update every second
+
+    // Set an interval to call resetExpenses() at the beginning of every month
+    setInterval(() => {
+      this.resetExpenses();
+    }, timeUntilNextMonth);
+  }
+
+  formatTimeDuration(duration: number): string {
+    const days = Math.floor(duration / (24 * 60 * 60 * 1000));
+    const hours = Math.floor((duration % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+    const minutes = Math.floor((duration % (60 * 60 * 1000)) / (60 * 1000));
+    const seconds = Math.floor((duration % (60 * 1000)) / 1000);
+    return `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+  }
+
   resetExpenses() {
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < this.allBudget.length; i++) {
@@ -242,5 +284,7 @@ export class DashboardComponent implements AfterViewInit {
 
     return months[adjustedMonthNumber];
   }
+
+
 
 }

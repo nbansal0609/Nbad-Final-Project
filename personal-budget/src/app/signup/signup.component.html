@@ -1,6 +1,11 @@
 <div *ngIf="isLoggedIn; else loggedOut">Logged in as {{ role }}.</div>
 
 <ng-template #loggedOut>
+  <pb-breadcrumbs>
+    <a [routerLink]="['/']" style="color: white;">Home</a>
+    <p style="color: white;">&nbsp;&nbsp;/&nbsp;&nbsp;</p>
+    <p style="color: white;">Signup</p>
+  </pb-breadcrumbs>
   <div class="container col-12">
     <h1>Register</h1>
     <p class="error">{{ error }}</p>

@@ -1,8 +1,8 @@
 <main role="main" class="container">
   <pb-breadcrumbs>
-    <a [routerLink]="['/']">Home</a>
-    <p>&nbsp;&nbsp;/&nbsp;&nbsp;</p>
-    <p>Dashboard</p>
+    <a [routerLink]="['/']" style="color: white;">Home</a>
+    <p style="color: white;">&nbsp;&nbsp;/&nbsp;&nbsp;</p>
+    <p style="color: white;">Dashboard</p>
   </pb-breadcrumbs>
   <h2 class="">Username - {{ authService.getLoggedUser() }} </h2>
 
@@ -91,9 +91,8 @@
         <button class="btn btn-outline-primary btn-sm mr-3" [routerLink]="['/budget/0/edit']">
           Add new
         </button>
-        <button class="btn btn-outline-primary btn-sm" (click)="resetExpenses()">
-          Reset expenses
-        </button>
+        <span class="time-until-next-month pulse">This month Expenses will be reset in: {{ timeUntilNextMonth }}</span>
+
       </div>
     </div>
   </div>

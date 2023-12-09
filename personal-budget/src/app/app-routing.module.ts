@@ -40,8 +40,6 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent,
     pathMatch: 'full',
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard]
   },
   {
     path: 'dashboard',

@@ -1,12 +1,12 @@
 <main role="main" class="container center">
   <pb-breadcrumbs>
-    <a [routerLink]="['/']">Home</a>
-    <p>&nbsp;&nbsp;/&nbsp;&nbsp;</p>
-    <p>Contact</p>
+    <a [routerLink]="['/']" style="color: white;">Home</a>
+    <p style="color: white;">&nbsp;&nbsp;/&nbsp;&nbsp;</p>
+    <p style="color: white;">Contact</p>
   </pb-breadcrumbs>
 
   <div class="help">
-    <h2>Hello , {{ authService.getLoggedUser() }}!</h2>
+    <h2>Hello {{ authService.getLoggedUser() }}!</h2>
     <span class="contacttext">Please send your queries to <span>nbansal@uncc.edu</span>
       <br>
       <br>

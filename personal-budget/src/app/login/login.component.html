@@ -2,7 +2,13 @@
   Logged in as {{ authService.getLoggedUser() }}.
 </div>
 
+
 <ng-template #loggedOut>
+  <pb-breadcrumbs>
+    <a [routerLink]="['/']" style="color: white;">Home</a>
+    <p style="color: white;">&nbsp;&nbsp;/&nbsp;&nbsp;</p>
+    <p style="color: white;">Login</p>
+  </pb-breadcrumbs>
   <div class="container col-12">
     <div class="alert alert-danger" *ngIf="sessionExpired">
       Your session is expired. Please login again.
