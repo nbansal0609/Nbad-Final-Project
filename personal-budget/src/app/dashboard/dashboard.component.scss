@@ -1,0 +1,71 @@
+h2 {
+    font: 30px;
+    text-align: center;
+}
+
+.card {
+    padding: 20px;
+    background-color: #64CCC5;
+    width: 110%;
+    margin-left: -50px
+}
+
+.card-header {
+    background-color: #2D4059;
+    color: white;
+    text-align: center;
+    margin: -20px;
+}
+
+table {
+    padding: 10px;
+    color: white;
+    font-weight: bolder;
+    margin: -1px;
+}
+
+button {
+    background-color: #2D4059;
+    color: aliceblue;
+    border-radius: 5px;
+    height: 45px;
+    margin: auto;
+}
+
+button:hover {
+    background-color: azure;
+    color: #2D4059;
+}
+
+.col-6 {
+    background-color: #64CCC5;
+    padding: 10px;
+
+    margin: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+
+}
+
+.row {
+    margin-top: 10px;
+    position: relative;
+    left: 18em;
+
+
+}
+
+h3 {
+    color: #65bc8b;
+}
+
+h2 {
+    margin: auto;
+    font-size: medium;
+}
+
+.form-control {
+    height: 45px;
+}
