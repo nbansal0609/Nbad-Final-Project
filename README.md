@@ -52,6 +52,8 @@ After this, a Chrome pop-up will open with the following steps:
 3. **Click the "Start E2E Testing on Chrome" button.**
 4. **Select the desired test case to run.**
 
+## Errors those might come:
+
 If you encounter the following error message:
 ```plaintext
 Sorry, we could not load: http://localhost:4200/home
@@ -60,10 +62,18 @@ Sorry, we could not load: http://localhost:4200/home
 1. **Restart both the backend server (node server.js) and the frontend server (ng serve).**
 2. **Try running the above commands again. This should resolve the issue.**
 
+If you encounter errors related to cypress installation please run this command:
+
+```bash
+npm install cypress@13.6.1 -f
+export APPLITOOLS_API_KEY=UGT6SGZonA5GCD8mlXSKnifPI1L1BJ2sC2LOAf105pjk4110
+npx cypress open
+```
+
 ### E2E Results 
 Full screenshots can be found at: 
 
- `Nbad-Final-Project/screenshots/Testing`.
+`Nbad-Final-Project/screenshots/Testing`.
 
 <img src="./screenshots/Testing/TestResult/crop_login_page_test.png" alt="LoginPageTest" width="400">
 
