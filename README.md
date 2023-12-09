@@ -66,7 +66,7 @@ Full screenshots can be found at:
  `Nbad-Final-Project/screenshots/Testing`.
 
 ![LoginPageTest](./screenshots/Testing/TestResult/crop_login_page_test.png)
-<img src="./screenshots/Testing/TestResult/crop_login_page_test.png" alt="LoginPageTest" width="300">
+<img src="./screenshots/Testing/TestResult/crop_login_page_test.png" alt="LoginPageTest" width="400">
 
 ![VisualRegressionLoginCorrect](./screenshots/Testing/TestResult/crop_visual_regression_login_correct_test.png)
 ![VisualRegressionLoginIncorrect](./screenshots/Testing/TestResult/crop_visual_regression_login_incorrect_test.png)
