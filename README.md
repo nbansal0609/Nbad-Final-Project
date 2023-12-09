@@ -65,12 +65,13 @@ Full screenshots can be found at:
 
  `Nbad-Final-Project/screenshots/Testing`.
 
-![LoginPageTest](./screenshots/Testing/TestResult/crop_login_page_test.png)
 <img src="./screenshots/Testing/TestResult/crop_login_page_test.png" alt="LoginPageTest" width="400">
 
-![VisualRegressionLoginCorrect](./screenshots/Testing/TestResult/crop_visual_regression_login_correct_test.png)
-![VisualRegressionLoginIncorrect](./screenshots/Testing/TestResult/crop_visual_regression_login_incorrect_test.png)
-![VisualRegressionVistPB](./screenshots/Testing/TestResult/crop_visual_regression_visit_pb_test.png)
+<img src="./screenshots/Testing/TestResult/crop_visual_regression_login_correct_test.png" alt="VisualRegressionLoginCorrect" width="400">
+
+<img src="./screenshots/Testing/TestResult/crop_visual_regression_login_incorrect_test.png" alt="VisualRegressionLoginIncorrect" width="400">
+
+<img src="./screenshots/Testing/TestResult/crop_visual_regression_visit_pb_test.png" alt="VisualRegressionVistPB" width="400">
 
 # Screenshots:
 
@@ -106,6 +107,9 @@ Full screenshots can be found at:
 
 ## Charts
 ![Charts](./screenshots/Charts.png)
+
+## Alert Box
+![AlertBox](./screenshots/AlertBox.png)
 
 ## Contact Page
 ![Contact](./screenshots/ContactPage.png)
