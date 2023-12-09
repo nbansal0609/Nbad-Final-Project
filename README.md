@@ -28,7 +28,7 @@
 cd personal-budget
 ng test
 ```
-
+![UnitTest](./screenshots/Testing/unit_test_main.png)
 ## E2E:
 The test cases location can be found at: 
 
