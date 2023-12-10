@@ -31,7 +31,7 @@ export class AppComponent implements OnDestroy, OnInit {
     console.log('ProgressBarPopup', this.progressBarPopup);
 
     // sets an timeout of in seconds - how long to be before showing popup.
-    this.idle.setIdle(39);
+    this.idle.setIdle(38);
     // sets a timeout period in seconds - how long to acknowledge the popup.
     this.idle.setTimeout(20);
 
