@@ -41,10 +41,12 @@ export class AppComponent implements OnDestroy, OnInit {
     });
 
     idle.onTimeout.subscribe(() => {
-      this.idleState = 'TIMED_OUT';
-      console.log('Timed out');
-      this.timedOut = true;
-      this.closeProgressForm();
+      if (this.closeProgressForm != undefined && this.authService.isLoggedIn()) {
+        this.idleState = 'TIMED_OUT';
+        console.log('Timed out');
+        this.timedOut = true;
+        this.closeProgressForm();
+      }
     });
 
     idle.onIdleStart.subscribe(() => {
@@ -53,14 +55,17 @@ export class AppComponent implements OnDestroy, OnInit {
     });
 
     idle.onTimeoutWarning.subscribe((countdown: any) => {
-      this.idleState = 'IDLE_TIME_IN_PROGRESS';
-      console.log('Idle time in progress');
-      console.log('ProgressBarPopup', this.progressBarPopup);
-      this.progressBarPopup.componentInstance.count = (Math.floor((countdown - 1) / 60) + 1);
-      this.progressBarPopup.componentInstance.progressCount = this.reverseNumber(countdown);
-      this.progressBarPopup.componentInstance.countMinutes = (Math.floor(countdown / 60));
-      this.progressBarPopup.componentInstance.countSeconds = countdown % 60;
-
+      if (this.authService.isLoggedIn()) {
+        this.idleState = 'IDLE_TIME_IN_PROGRESS';
+        console.log('Expire time in progress');
+        if (this.progressBarPopup != undefined) {
+          console.log('ProgressBarPopup', this.progressBarPopup);
+          this.progressBarPopup.componentInstance.count = (Math.floor((countdown - 1) / 60) + 1);
+          this.progressBarPopup.componentInstance.progressCount = this.reverseNumber(countdown);
+          this.progressBarPopup.componentInstance.countMinutes = (Math.floor(countdown / 60));
+          this.progressBarPopup.componentInstance.countSeconds = countdown % 60;
+        }
+      }
     });
 
 
@@ -87,7 +92,7 @@ export class AppComponent implements OnDestroy, OnInit {
         }
       });
 
-    if (authService.isLoggedIn) {
+    if (authService.isLoggedIn()) {
       this.reset();
       this.idle.setKeepaliveEnabled(true);
     }
@@ -122,31 +127,33 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   openProgressForm(count: number) {
-    this.progressBarPopup = this.ngbModal.open(TimeoutModalComponent, {
-      backdrop: 'static',
-      keyboard: false
-    });
-    this.progressBarPopup.componentInstance.count = count;
-    this.progressBarPopup.result.then((result: any) => {
-      console.log('pop up result', result);
-      if ((result !== '' && 'logout' === result) || result === undefined) {
-        this.authService.logout()
-          .subscribe(success => {
-            if (success) {
-              this.router.navigate(['login']);
-              // this.resetTimeOut();
-            }
-          });
-      } else {
-        this.authService.refreshToken()
-          .subscribe(success => {
-            if (success) {
-              console.log('Refresh tokens successful');
-              this.reset();
-            }
-          });
-      }
-    });
+    if (this.authService.isLoggedIn()) {
+      this.progressBarPopup = this.ngbModal.open(TimeoutModalComponent, {
+        backdrop: 'static',
+        keyboard: false
+      });
+      this.progressBarPopup.componentInstance.count = count;
+      this.progressBarPopup.result.then((result: any) => {
+        console.log('pop up result', result);
+        if ((result !== '' && 'logout' === result) || result === undefined) {
+          this.authService.logout()
+            .subscribe(success => {
+              if (success) {
+                this.router.navigate(['login']);
+                // this.resetTimeOut();
+              }
+            });
+        } else {
+          this.authService.refreshToken()
+            .subscribe(success => {
+              if (success) {
+                console.log('Refresh tokens successful');
+                this.reset();
+              }
+            });
+        }
+      });
+    }
   }
 
 
