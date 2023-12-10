@@ -20,7 +20,7 @@
               <th></th>
               <th>Expense Title</th>
               <th>Expense Value</th>
-              <th>Select month</th>
+              <th>Select Month</th>
 
               <th></th>
             </tr>
@@ -37,7 +37,7 @@
 
               <td>
                 <button class="btn btn-outline-primary btn-sm" [routerLink]="['/budget', budget.id, 'edit']">
-                  Edit budget
+                  Edit Budget
                 </button>
               </td>
 
@@ -57,7 +57,7 @@
                   <div class="input-group-append">
                     <button class="btn btn-outline-primary btn-sm input-group-append" type="button" id="expense"
                       (click)="addExpense(budget, newExpense[i], newExpenseTitle[i], i)">
-                      Add expense
+                      Add Expense
                     </button>
                   </div>
                 </div>
@@ -90,7 +90,7 @@
         </table>
 
         <button class="btn btn-outline-primary btn-sm mr-3" [routerLink]="['/budget/0/edit']">
-          Add new
+          Add New Budget Category
         </button>
         <span class="time-until-next-month pulse">This month Expenses will be reset in: {{ timeUntilNextMonth }}</span>
 
